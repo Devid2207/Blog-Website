@@ -1,10 +1,9 @@
 # Blog-Website
 
-1. server
-- npm i
-- npm run dev
+1. cd server
+- npm i || yarn
+- npm run dev || yarn dev
 
-2. client
-- cd client
-- npm i
-- npm start
+2. cd client
+- npm i || yarn
+- npm start || yarn start

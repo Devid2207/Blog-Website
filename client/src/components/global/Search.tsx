@@ -17,8 +17,14 @@ const Search = () => {
       if(search.length < 2) return setBlogs([]);
 
       try {
+        var start: any = new Date();
+
         const res = await getAPI(`search/blogs?title=${search}`)
         setBlogs(res.data)
+        
+        var end: any = new Date();
+        end = end - start;
+        console.info('Execution time: %dms', end)
       } catch (err) {
         console.log(err)
       }

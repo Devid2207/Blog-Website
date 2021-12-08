@@ -287,9 +287,16 @@ const blogCtrl = {
         {
           $search: {
             index: "searchTitle",
-            autocomplete: {
-              "query": `${req.query.title}`,
-              "path": "title"
+            // autocomplete: {
+            //   "query": `${req.query.title}`,
+            //   "path": "title"
+            // }
+            'text': {
+              'query': `${req.query.title}`,
+              'path': {
+                // "value": "title"
+                "wildcard": "n*"
+              }
             }
           }
         },
@@ -304,7 +311,6 @@ const blogCtrl = {
           }
         }
       ])
-
       if(!blogs.length)
         return res.status(400).json({msg: 'No Blogs.'})
 

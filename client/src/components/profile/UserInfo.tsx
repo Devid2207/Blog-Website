@@ -53,7 +53,7 @@ const UserInfo = () => {
   return (
     <form className="profile_info" onSubmit={handleSubmit}>
       <div className="info_avatar">
-        <img src={avatar ? URL.createObjectURL(avatar) : auth.user.avatar} 
+        <img src={avatar ? URL.createObjectURL(avatar as Blob) : auth.user.avatar} 
         alt="avatar" 
         />
 
